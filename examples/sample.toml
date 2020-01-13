@@ -1,0 +1,11 @@
+[http]
+bind-address = "0.0.0.0:9096"
+
+# Sharding http node configuration.
+[[http-shard-node]]
+    name = "cluster"
+
+    # Replica http node configuration.
+    replica-node = [
+        { address="http://127.0.0.1:8086", buffer-size-mb = 200, max-delay-interval = "5s" },
+    ]
